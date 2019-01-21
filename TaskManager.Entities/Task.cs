@@ -12,7 +12,7 @@ namespace TaskManager.Entities
     {
         [Key]
         public int TaskId { get; set; }
-        public int? TaskParentId { get; set; }
+       
         [Required]
         [StringLength(20)]
         public string TaskName { get; set; }
@@ -21,8 +21,18 @@ namespace TaskManager.Entities
         public DateTime? Startdate { get; set; }
         [Column(TypeName = "Date")]
         public DateTime? Enddate { get; set; }
-        
+        public string Status { get; set; }
+        public bool IsParentTask { get; set; }
+        public int? TaskProjectId { get; set; }
+        [ForeignKey("TaskProjectId")]
+        public virtual Project TaskProject { get; set; }
 
+        public int? TaskUserId { get; set; }
+        [ForeignKey("TaskUserId")]
+        public virtual User TaskUser { get; set; }
+   
+       public int? TaskParentId { get; set; }
+        [ForeignKey("TaskParentId")]
         public Task TaskParent { get; set; }
     }
    

@@ -19,8 +19,8 @@ namespace TaskManager.API
     .ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             GlobalConfiguration.Configuration.Formatters
                 .Remove(GlobalConfiguration.Configuration.Formatters.XmlFormatter);
-          //  Database.SetInitializer<TaskMangerContext>(new DropCreateDatabaseIfModelChanges<TaskMangerContext>());
-            //Database.SetInitializer<TaskMangerContext>(null);
+            Database.SetInitializer<TaskMangerContext>(new DropCreateDatabaseIfModelChanges<TaskMangerContext>());
+            Database.SetInitializer<TaskMangerContext>(null);
             GlobalConfiguration.Configure(WebApiConfig.Register);
         
         }

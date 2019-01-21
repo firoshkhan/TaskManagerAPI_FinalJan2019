@@ -26,6 +26,13 @@ namespace TaskManager.API
             TaskBL obj = new TaskBL();
             return Ok(obj.GetTaskById(TaskId));
         }
+        [Route("GetTasksByProject/{ProjId}")]
+        public IHttpActionResult GetTaskByProjectId(int ProjId)
+        {
+
+            TaskBL obj = new TaskBL();
+            return Ok(obj.GetTaskByProjectId(ProjId));
+        }
         [Route("DeleteTask/{TaskId}") ]
         [HttpDelete]
         public IHttpActionResult Delete(int TaskId)

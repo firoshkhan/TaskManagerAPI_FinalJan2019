@@ -11,22 +11,22 @@ using TaskManager.Entities;
 
 namespace TaskManager.BusinessLib
 {
-    public class TaskBL
+    public class UserBL
     {
         /// <summary>
-        /// To Add Task
+        /// To Add User
         /// </summary>
         /// <param name="item"></param>
-        public void AddTask(Task item)
+        public void AddUser(User item)
         {
             try
             {
                 using (TaskMangerContext db = new TaskMangerContext())
                 {
 
-                    db.Tasks.Add(item);
+                    db.Users.Add(item);
                     db.SaveChanges();
-                    int id = item.TaskId;
+                    int id = item.UserId;
                 }
             }
            
@@ -37,17 +37,16 @@ namespace TaskManager.BusinessLib
             }
         }
         /// <summary>
-        /// To Get all Tasks
+        /// To Get all Users
         /// </summary>
         /// <returns></returns>
-        public List<Task> GetAllTasks()
+        public List<User> GetAllUsers()
         {
             try
             {
                 using (TaskMangerContext db = new TaskMangerContext())
                 {
-                    //  return db.Tasks.ToList();
-                    return db.Tasks.Include(c => c.TaskUser).Include(d => d.TaskProject).ToList();
+                    return db.Users.ToList();
                 }
             }
             catch (Exception exception)
@@ -58,18 +57,18 @@ namespace TaskManager.BusinessLib
         }
 
         /// <summary>
-        /// To Get specific task
+        /// To Get specific User
         /// </summary>
-        /// <param name="TaskId"></param>
+        /// <param name="UserId"></param>
         /// <returns></returns>
-        public Task GetTaskByName(string Name)
+        public User GetUserByName(string Name)
         {
 
             try
             {
                 using (TaskMangerContext db = new TaskMangerContext())
                 {
-                    return db.Tasks.SingleOrDefault(k => k.TaskName == Name);
+                    return db.Users.SingleOrDefault(k => k.FirstName == Name);
                 }
             }
             catch (Exception exception)
@@ -79,18 +78,18 @@ namespace TaskManager.BusinessLib
             }
         }
         /// <summary>
-        /// To Get specific task
+        /// To Get specific User
         /// </summary>
-        /// <param name="TaskId"></param>
+        /// <param name="UserId"></param>
         /// <returns></returns>
-        public Task GetTaskById(int TaskId)
+        public User GetUserById(int UserId)
         {
 
             try
             {
                 using (TaskMangerContext db = new TaskMangerContext())
                 {
-                    return db.Tasks.Include(c => c.TaskUser).Include(d => d.TaskProject).Include(a => a.TaskParent).SingleOrDefault(k => k.TaskId == TaskId);
+                    return db.Users.SingleOrDefault(k => k.UserId == UserId);
                 }
             }
             catch (Exception exception)
@@ -99,41 +98,17 @@ namespace TaskManager.BusinessLib
                 throw ;
             }
         }
-
-
         /// <summary>
-        /// To Get specific task
+        /// Tp update the User
         /// </summary>
-        /// <param name="TaskId"></param>
-        /// <returns></returns>
-        public List<Task> GetTaskByProjectId(int ProjId)
-        {
-
-            try
-            {
-                using (TaskMangerContext db = new TaskMangerContext())
-                {
-                    return db.Tasks.Where(k => k.TaskProjectId == ProjId).ToList();
-                  //  return db.Tasks.SingleOrDefault(k => k.TaskProjectId == ProjId);
-                }
-            }
-            catch (Exception exception)
-            {
-
-                throw;
-            }
-        }
-        /// <summary>
-        /// Tp update the Task
-        /// </summary>
-        /// <param name="task"></param>
-        public void UpdateTask(Task task)
+        /// <param name="User"></param>
+        public void UpdateUser(User user)
         {
             try
             {
                 using (TaskMangerContext db = new TaskMangerContext())
                 {
-                    db.Entry(task).State = EntityState.Modified;
+                    db.Entry(user).State = EntityState.Modified;
                     db.SaveChanges();
                 }
              }
@@ -145,18 +120,18 @@ namespace TaskManager.BusinessLib
         }
 
         /// <summary>
-        /// To delete the task
+        /// To delete the User
         /// </summary>
-        /// <param name="TaskId"></param>
-        public void DeleteTask(int TaskId)
+        /// <param name="UserId"></param>
+        public void DeleteUser(int UserId)
         {
             try
             {
                 using (TaskMangerContext db = new TaskMangerContext())
                 {
 
-                    Task task = new Task { TaskId = TaskId };
-                    db.Entry(task).State = EntityState.Deleted;
+                    User user = new User { UserId = UserId };
+                    db.Entry(user).State = EntityState.Deleted;
                     db.SaveChanges();
 
                 }

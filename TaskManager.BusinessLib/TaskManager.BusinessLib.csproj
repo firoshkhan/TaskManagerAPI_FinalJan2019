@@ -50,6 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ProjectBL.cs" />
+    <Compile Include="UserBL.cs" />
     <Compile Include="TaskBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
