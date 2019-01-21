@@ -31,6 +31,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework.6.0.0.0.Fakes">
+      <HintPath>FakesAssemblies\EntityFramework.6.0.0.0.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServerCompact.6.0.0.0.Fakes">
+      <HintPath>FakesAssemblies\EntityFramework.SqlServerCompact.6.0.0.0.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -50,7 +59,8 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="packages.config" />
+    <Fakes Include="Fakes\EntityFramework.SqlServerCompact.fakes" />
+    <Fakes Include="Fakes\EntityFramework.fakes" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TaskManager.Entities\TaskManager.Entities.csproj">
