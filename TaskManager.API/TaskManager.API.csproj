@@ -168,7 +168,7 @@
       <Name>TaskManager.BusinessLib</Name>
     </ProjectReference>
     <ProjectReference Include="..\TaskManager.DataLib\TaskManager.DataLib.csproj">
-      <Project>{c9493d06-f98e-471a-93e1-26be8510ddc8}</Project>
+      <Project>{a2ab6770-b59b-4ad8-8bf5-5adfa58060c1}</Project>
       <Name>TaskManager.DataLib</Name>
     </ProjectReference>
     <ProjectReference Include="..\TaskManager.Entities\TaskManager.Entities.csproj">

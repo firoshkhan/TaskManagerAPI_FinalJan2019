@@ -5,7 +5,7 @@ using System.Text;
 
 using System.Data.Entity;
 using TaskManager.Entities;
-using TaskManager.DataLib.Migrations;
+//using TaskManager.DataLib.Migrations;
 
 namespace TaskManager.DataLib
 {
