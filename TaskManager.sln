@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.28010.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager.API", "TaskManager.API\TaskManager.API.csproj", "{49966B44-E345-4887-BFED-7459D3EAD970}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A0416C3B-A7BB-4B32-B5DA-F4740F088BB8} = {A0416C3B-A7BB-4B32-B5DA-F4740F088BB8}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManager.BusinessLib", "TaskManager.BusinessLib\TaskManager.BusinessLib.csproj", "{4191C5B7-FB24-4E3A-9F11-B3FF606AAC62}"
 EndProject
