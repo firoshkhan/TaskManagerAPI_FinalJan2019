@@ -79,10 +79,6 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TaskManager.API\TaskManager.API.csproj">
-      <Project>{49966b44-e345-4887-bfed-7459d3ead970}</Project>
-      <Name>TaskManager.API</Name>
-    </ProjectReference>
     <ProjectReference Include="..\TaskManager.BusinessLib\TaskManager.BusinessLib.csproj">
       <Project>{4191c5b7-fb24-4e3a-9f11-b3ff606aac62}</Project>
       <Name>TaskManager.BusinessLib</Name>
